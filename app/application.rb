@@ -17,8 +17,8 @@ class Application
     elsif req.path.match(/cart/)
       resp.write "Your cart is empty" if @@cart.size == 0
       @@cart.each do |item|
-      resp.write "#{item}\n"
-    end
+        resp.write "#{item}\n"
+      end
     elsif req.path.match(/add/)
       search_term = req.params["item"]
       resp.write handle_add(search_term)
